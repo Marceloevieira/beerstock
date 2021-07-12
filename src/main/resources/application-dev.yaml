@@ -1,0 +1,17 @@
+#dev properties
+
+app:
+  message: Arquivo de configuraçao do ambeinte DEV da ${spring.application.name}
+
+#debug: true
+
+spring:
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db
+    username: sa
+    password: sa
+  h2:
+    console:
+      enabled: true

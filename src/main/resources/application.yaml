@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Aplicaçao com springboot!
+  profiles:
+    active: dev
