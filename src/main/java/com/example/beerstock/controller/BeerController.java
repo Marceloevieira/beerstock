@@ -1,7 +1,7 @@
 package com.example.beerstock.controller;
 
 import com.example.beerstock.dto.request.BeerDTO;
-import com.example.beerstock.exception.BearAlreadyRegisteredException;
+import com.example.beerstock.exception.BeerAlreadyRegisteredException;
 import com.example.beerstock.exception.BeerNotFoundException;
 import com.example.beerstock.service.BeerService;
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ public class BeerController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public BeerDTO create(@RequestBody @Valid BeerDTO beerDTO) throws BearAlreadyRegisteredException {
+    public BeerDTO create(@RequestBody @Valid BeerDTO beerDTO) throws BeerAlreadyRegisteredException {
         return beerService.createBeer(beerDTO);
     }
 

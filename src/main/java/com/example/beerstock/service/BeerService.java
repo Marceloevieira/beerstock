@@ -2,7 +2,7 @@ package com.example.beerstock.service;
 
 import com.example.beerstock.dto.request.BeerDTO;
 import com.example.beerstock.entity.Beer;
-import com.example.beerstock.exception.BearAlreadyRegisteredException;
+import com.example.beerstock.exception.BeerAlreadyRegisteredException;
 import com.example.beerstock.exception.BeerNotFoundException;
 import com.example.beerstock.mapper.BeerMapper;
 import com.example.beerstock.repository.BeerRepository;
@@ -23,7 +23,7 @@ public class BeerService {
     private final BeerMapper beerMapper = BeerMapper.INSTANCE;
 
 
-    public BeerDTO createBeer(BeerDTO beerDTO) throws BearAlreadyRegisteredException {
+    public BeerDTO createBeer(BeerDTO beerDTO) throws BeerAlreadyRegisteredException {
 
         verifyIfIsAlreadyRegistered(beerDTO.getName());
 
@@ -63,12 +63,12 @@ public class BeerService {
 
     }
 
-    private void verifyIfIsAlreadyRegistered(String name) throws BearAlreadyRegisteredException {
+    private void verifyIfIsAlreadyRegistered(String name) throws BeerAlreadyRegisteredException {
 
         Optional<Beer> foundBeer = beerRepository.findByName(name);
 
         if (foundBeer.isPresent()) {
-            throw new BearAlreadyRegisteredException(name);
+            throw new BeerAlreadyRegisteredException(name);
         }
 
     }
